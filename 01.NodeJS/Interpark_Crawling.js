@@ -26,7 +26,7 @@ axios.get(url, {responseType: 'arraybuffer'})
             console.log(`저자 : ${author}`);
             console.log(`출판사 : ${company}`);
             console.log(`가격 : ${price}원`);
-            console.log('---------------------');
+            console.log('------------------------------');
         });
     })
     .catch(err => {
