@@ -5,10 +5,20 @@ fs.readdir('tmp', (err, files) => {
     console.log(files);
 });
 
+
 // 파일의 정보 알아내기
 fs.stat('tmp/a.txt', (err, stats) => {
     console.log(stats.mtime);           // 최종 수정 시간
     console.log(stats.size);            // 파일의 크기
 });
 
+console.clear()
+
 // 디렉토리에 있는 파일에 대하여 최종 수정시간, 파일의 크기, 파일 이름 표시
+fs.readdir('tmp', (err, files) => {
+    for (let file of files) {
+        fs.stat('tmp/'+file, (err, stats) => {
+            console.log(`${stats.mtime}\t${stats.size}\t{file}`);
+        })
+    }
+});
