@@ -1,4 +1,4 @@
-exports.index = function() {
+exports.index = function(title, list, content, control) {
     return `
     <!DOCTYPE html>
     <html lang="ko">
@@ -6,19 +6,19 @@ exports.index = function() {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>웹 기술</title>
+        <title>${title}</title>
     </head>
     <body style="margin: 50px;">
-        <h1>웹 기술</h1>
+        <h1><a href="/">웹 기술</a></h1>
         <ul>
-            <li><h3>HTML</h3></li>
-            <li><h3>CSS</h3></li>
-            <li><h3>JavaScript</h3></li>
+            ${list}                 <!-- 22.app리스트.js 에서 변경됨 -->
         </ul>
         <hr>
         <p>
-            월드 와이드 웹 어쩌고
+            ${content}              <!-- 23.app조회.js 에서 변경됨 -->
         </p>
+        <hr>
+        ${control}              <!-- 24.app생성.js 에서 추가됨 -->
     </body>
     </html>
     `
