@@ -27,3 +27,6 @@ node_modules/
 01.NodeJS/package-lock.json
 01.NodeJS/package.json
 02.http/view/tmp.html
+03.MySQL/package-lock.json
+03.MySQL/package.json
+03.MySQL/test.html
