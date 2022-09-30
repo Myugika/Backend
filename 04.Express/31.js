@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
     dm.getList(rows => {
-        ejs.renderFile('views/23.index.ejs', {
+        ejs.renderFile('views/31.index.ejs', {
             rows                                // {rows: rows}
         }, (err, html) => {
             res.send(html);
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     });
 });
 app.get('/create', (req, res) => {
-    ejs.renderFile('views/23.create.ejs', (err, html) => {
+    ejs.renderFile('views/31.create.ejs', (err, html) => {
         res.send(html);
     });
 });
@@ -35,7 +35,7 @@ app.get('/update/:id', (req, res) => {  // http://localhost:3000/update/123
         const player = rows[0].player;
         const backNo = parseInt(rows[0].backNo);
         const position = rows[0].position;
-        ejs.renderFile('views/23.update.ejs', {
+        ejs.renderFile('views/31.update.ejs', {
             id, player, backNo, position    // id:id, player:player, backNo:backNo, position:position
         }, (err, html) => {
             res.send(html);
@@ -53,7 +53,7 @@ app.post('/update', (req, res) => {
 });
 app.get('/delete/:id', (req, res) => {      // http://localhost/delete/123
     const id = parseInt(req.params.id);
-    ejs.renderFile('views/23.delete.ejs', {
+    ejs.renderFile('views/31.delete.ejs', {
         id
     }, (err, html) => {
         res.send(html);
